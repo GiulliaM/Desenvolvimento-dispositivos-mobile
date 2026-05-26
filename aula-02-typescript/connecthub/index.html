@@ -1,75 +1,91 @@
 <!DOCTYPE html>
-
 <html lang="pt-br">
-
 <head>
-
   <meta charset="UTF-8" />
-
   <title>ConnectHub</title>
-
   <style>
-
+    /* ── Estilos originais do professor ── */
     body { font-family: sans-serif; max-width: 480px; margin: 2rem auto; }
 
     #lista { list-style: none; padding: 0; }
-
     #lista li {
-
       display: flex;
-
       justify-content: space-between;
-
       align-items: center;
-
       padding: 0.75rem 1rem;
-
       margin-bottom: 0.5rem;
-
       border: 1px solid #ddd;
-
       border-radius: 8px;
-
     }
-
     .info { display: flex; flex-direction: column; }
-
     .categoria { font-size: 0.75rem; color: #888; }
-
     .estrela {
-
       font-size: 1.5rem;
-
       cursor: pointer;
-
       background: none;
-
       border: none;
-
       line-height: 1;
-
     }
-
     .estrela.favoritado { color: gold; }
-
     .estrela.favoritado::before { content: "★"; }
-
     .estrela:not(.favoritado) { color: #ccc; }
-
     .estrela:not(.favoritado)::before { content: "☆"; }
 
+    /* ── Estilos extras para o formulário e tabela ── */
+    form { margin-top: 1.5rem; display: flex; flex-direction: column; gap: 0.5rem; }
+    form input, form select {
+      padding: 0.5rem;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      font-size: 0.9rem;
+    }
+    form button {
+      padding: 0.6rem;
+      background: #2563eb;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 0.9rem;
+    }
+    #erro-categoria { color: red; font-size: 0.8rem; display: none; }
+    #tabela-saida { margin-top: 1rem; display: none; }
+    #tabela-saida table { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
+    #tabela-saida th, #tabela-saida td { border: 1px solid #ddd; padding: 0.4rem 0.6rem; text-align: left; }
+    #tabela-saida th { background: #f5f5f5; }
+    #btn-extrair {
+      margin-top: 1rem;
+      padding: 0.5rem 1rem;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      background: white;
+      cursor: pointer;
+    }
   </style>
-
 </head>
-
 <body>
-
   <h1>📋 ConnectHub</h1>
 
   <ul id="lista"></ul>
 
+  <form id="form-contato">
+    <input type="text"  name="nome"     placeholder="Nome *"             required />
+    <input type="tel"   name="telefone" placeholder="Telefone *"         required />
+    <input type="email" name="email"    placeholder="E-mail (opcional)"  />
+    <select name="categoria" required>
+      <option value="">Selecione a categoria *</option>
+      <option value="Amigo">👥 Amigo</option>
+      <option value="Trabalho">💼 Trabalho</option>
+      <option value="Familia">🏠 Família</option>
+      <option value="Outro">📌 Outro</option>
+    </select>
+    <span id="erro-categoria"></span>
+    <button type="submit">+ Adicionar contato</button>
+  </form>
+
+  <button id="btn-extrair">📊 Ver campos</button>
+  <div id="tabela-saida"></div>
+
   <script src="contatos.js"></script>
-
 </body>
-
 </html>
