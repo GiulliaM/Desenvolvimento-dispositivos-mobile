@@ -4,7 +4,6 @@
   <meta charset="UTF-8" />
   <title>ConnectHub</title>
   <style>
-    /* ── Estilos originais do professor ── */
     body { font-family: sans-serif; max-width: 480px; margin: 2rem auto; }
 
     #lista { list-style: none; padding: 0; }
@@ -31,7 +30,6 @@
     .estrela:not(.favoritado) { color: #ccc; }
     .estrela:not(.favoritado)::before { content: "☆"; }
 
-    /* ── Estilos extras para o formulário e tabela ── */
     form { margin-top: 1.5rem; display: flex; flex-direction: column; gap: 0.5rem; }
     form input, form select {
       padding: 0.5rem;
@@ -69,9 +67,9 @@
   <ul id="lista"></ul>
 
   <form id="form-contato">
-    <input type="text"  name="nome"     placeholder="Nome *"             required />
-    <input type="tel"   name="telefone" placeholder="Telefone *"         required />
-    <input type="email" name="email"    placeholder="E-mail (opcional)"  />
+    <input type="text"  name="nome"     placeholder="Nome *"            required />
+    <input type="tel"   name="telefone" placeholder="Telefone *"        required />
+    <input type="email" name="email"    placeholder="E-mail (opcional)" />
     <select name="categoria" required>
       <option value="">Selecione a categoria *</option>
       <option value="Amigo">👥 Amigo</option>
