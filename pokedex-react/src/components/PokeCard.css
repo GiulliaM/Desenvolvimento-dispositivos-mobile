@@ -1,0 +1,76 @@
+.pokecard-box {
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  padding: 24px;
+  margin-top: 20px;
+  text-align: center;
+  transition: transform 0.2s ease-in-out;
+  border: 2px solid #f0f0f0;
+}
+
+.pokecard-box:hover {
+  transform: translateY(-4px);
+}
+
+.pokecard-name {
+  font-size: 1.5rem;
+  text-transform: capitalize;
+  color: #333;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.pokecard-star {
+  animation: popIn 0.3s ease-out;
+}
+
+.pokecard-image {
+  width: 130px;
+  height: 130px;
+  background-color: #f7f9fc;
+  border-radius: 50%;
+  margin-bottom: 16px;
+  object-fit: contain;
+}
+
+.pokecard-info p {
+  margin: 8px 0;
+  color: #666;
+  font-size: 1rem;
+}
+
+.pokecard-fav-button {
+  margin-top: 16px;
+  padding: 8px 16px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #fff;
+  background-color: #ffcb05;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+}
+
+.pokecard-fav-button:hover {
+  background-color: #e6b800;
+}
+
+.pokecard-fav-button.is-fav {
+  background-color: #ff4757;
+}
+
+.pokecard-fav-button.is-fav:hover {
+  background-color: #e84118;
+}
+
+@keyframes popIn {
+  0% { transform: scale(0); }
+  80% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
